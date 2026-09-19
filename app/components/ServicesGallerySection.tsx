@@ -113,13 +113,14 @@ export default function ServicesGallerySection() {
                 } group flex flex-col justify-end`}
                 title={`خدمة ${service.title} - مؤسسة السبيعي`}
               >
-                {/* صورة الخدمة مع فلتر وزوم */}
+                {/* صورة الخدمة مع تحسين الـ sizes لتجاوز تنبيهات الأداء */}
                 <div className="absolute inset-0 z-0">
                   <Image
                     src={service.image}
                     alt={`خدمة ${service.title} المقدمة من مؤسسة السبيعي في جدة والمملكة`}
                     title={`مؤسسة السبيعي - ${service.title}`}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover object-center filter brightness-[0.7] contrast-110 group-hover:scale-105 transition-transform duration-700"
                   />
                   {/* تدرج لوني أسود وأحمر لإبراز النصوص */}
@@ -152,14 +153,12 @@ export default function ServicesGallerySection() {
                     </div>
                   </div>
                 ) : (
-                  /* المحتوى للبطاقات غير النشطة (اسم الخدمة بشكل رأسي معتدل ومقروء تماماً) */
+                  /* المحتوى للبطاقات غير النشطة */
                   <div className="relative z-10 h-full flex flex-col items-center justify-between py-6">
-                    {/* الرقم التسلسلي في الأعلى */}
                     <span className="w-8 h-8 rounded-lg bg-red-600/90 text-white font-bold text-xs flex items-center justify-center shadow-[0_0_10px_rgba(220,38,38,0.8)]">
                       0{index + 1}
                     </span>
 
-                    {/* اسم الخدمة مكتوب بشكل رأسي معتدل ومناسب للغة العربية */}
                     <div className="py-4" style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}>
                       <span className="text-white font-extrabold text-sm tracking-wider whitespace-nowrap drop-shadow-md group-hover:text-red-400 transition-colors">
                         {service.title}

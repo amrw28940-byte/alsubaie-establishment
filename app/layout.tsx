@@ -30,14 +30,15 @@ export default function RootLayout({
       dir="rtl"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="preconnect" href="https://alsubaie-establishment-lzkb.vercel.app" />
+        <link rel="dns-prefetch" href="https://alsubaie-establishment-lzkb.vercel.app" />
+      </head>
       <body className="min-h-full flex flex-col bg-black text-white selection:bg-red-600 selection:text-white">
-        {/* 1. الهيدر في أعلى الصفحة */}
         <Navbar />
         
-        {/* 2. محتوى الصفحات في المنتصف */}
         <main className="flex-1">{children}</main>
 
-        {/* 3. الفوتر في أسفل الصفحة تماماً */}
         <Footer />
       </body>
     </html>

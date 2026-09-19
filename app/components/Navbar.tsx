@@ -27,13 +27,13 @@ export default function Navbar() {
       {/* الحافة السفلية للـ هيدر: بروز وتوهج ناري أحمر قوي */}
       <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-600 to-transparent shadow-[0_0_25px_rgba(220,38,38,1)]"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         {/* تم ضبط ارتفاع الهيدر ليكون ثابت ومناسب لأخذ الأزرار الارتفاع بالكامل */}
         <div className="flex items-center justify-between h-20">
           
           {/* 1. اللوجو (مع تحسينات الـ SEO ووصف alt دقيق) */}
-          <Link href="/" className="flex items-center gap-3 group px-4" title="مؤسسة السبيعي للمقاولات - الصفحة الرئيسية">
-            <div className="relative w-36 h-12 flex items-center">
+          <Link href="/" className="flex items-center gap-3 group px-2 sm:px-4" title="مؤسسة السبيعي للمقاولات - الصفحة الرئيسية">
+            <div className="relative w-32 sm:w-36 h-12 flex items-center">
               <Image
                 src="/logo.webp"
                 alt="شعار مؤسسة السبيعي للمقاولات العامة والساندوتش بانل"
@@ -50,7 +50,7 @@ export default function Navbar() {
             {/* زر البحث (يأخذ ارتفاع الهيدر بالكامل) */}
             <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="h-full px-6 bg-transparent hover:bg-neutral-900 text-neutral-300 hover:text-red-500 border-l border-neutral-800 flex items-center justify-center transition-all group"
+              className="h-full px-4 sm:px-6 bg-transparent hover:bg-neutral-900 text-neutral-300 hover:text-red-500 border-l border-neutral-800 flex items-center justify-center transition-all group"
               title="بحث في الموقع"
               aria-label="فتح نافذة البحث"
             >
@@ -60,17 +60,17 @@ export default function Navbar() {
             {/* زر اتصل بنا (يأخذ ارتفاع الهيدر بالكامل مع السهم) */}
             <Link
               href="/contact"
-              className="h-full px-8 bg-transparent hover:bg-red-600/10 text-white font-bold text-sm border-l border-neutral-800 flex items-center gap-3 transition-all group"
+              className="h-full px-4 sm:px-8 bg-transparent hover:bg-red-600/10 text-white font-bold text-xs sm:text-sm border-l border-neutral-800 flex items-center gap-2 sm:gap-3 transition-all group"
               title="تواصل مع مؤسسة السبيعي"
             >
               <span className="group-hover:text-red-500 transition-colors">اتصل بنا</span>
-              <ArrowLeft className="w-4 h-4 text-red-500 group-hover:-translate-x-1 transition-transform" />
+              <ArrowLeft className="w-4 h-4 text-red-500 group-hover:-translate-x-1 transition-transform hidden sm:inline-block" />
             </Link>
 
             {/* زر القائمة الموحد (الهمبرجر) يأخذ ارتفاع الهيدر بالكامل */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="h-full px-7 bg-neutral-900/60 hover:bg-neutral-900 text-white border-l border-neutral-800 flex items-center justify-center transition-all group"
+              className="h-full px-5 sm:px-7 bg-neutral-900/60 hover:bg-neutral-900 text-white border-l border-neutral-800 flex items-center justify-center transition-all group relative z-50 cursor-pointer"
               aria-label="فتح القائمة الرئيسية"
             >
               {isMenuOpen ? (
@@ -109,7 +109,7 @@ export default function Navbar() {
 
       {/* القائمة الجانبية المنسدلة الكاملة عند الضغط على زر الهمبرجر */}
       {isMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-neutral-950/98 border-b border-neutral-800 backdrop-blur-2xl shadow-[0_25px_60px_rgba(0,0,0,0.95)] px-6 py-10 animate-in slide-in-from-top-4 duration-300">
+        <div className="absolute top-full left-0 right-0 bg-neutral-950/98 border-b border-neutral-800 backdrop-blur-2xl shadow-[0_25px_60px_rgba(0,0,0,0.95)] px-6 py-10 animate-in slide-in-from-top-4 duration-300 z-50">
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
             
             {/* روابط التنقل الأساسية */}
